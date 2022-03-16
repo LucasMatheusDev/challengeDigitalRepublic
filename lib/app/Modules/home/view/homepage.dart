@@ -96,12 +96,13 @@ class HomePage extends StatelessWidget {
         () => count.value < 1
             ? const SizedBox()
             : FloatingActionButton.extended(
+              key: const Key("buttonForViewResult"),
                 onPressed: () {
                   if (_formKeyHome.currentState!.validate()) {
                     _formKeyHome.currentState?.save();
                     ResultCalculatorPaints().resultSuggestionPaint();
                     Get.to(
-                      () => const ResultView(),
+                      () => const ResultView(key: Key("resultViewKey"),),
                     );
                   }
                 },
