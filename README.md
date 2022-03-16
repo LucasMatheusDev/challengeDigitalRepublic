@@ -34,19 +34,30 @@ As variações de tamanho das latas de tinta são:
  
 ## Temos a View Principal, 
 ### Onde após informar a quantidade de paredes,
- será coletado os dados informados pelo usuario 
+ ### será coletado os da dos informados pelo usuario 
+ 
+ 
+![Screenshot_1647452105](https://user-images.githubusercontent.com/81427844/158652607-02dc01a9-9685-4799-8d0e-72fb6d59be03.png)
+ 
 
- ![Screenshot_1647450354](https://user-images.githubusercontent.com/81427844/158647112-e55faa91-7215-46d7-a0d4-7fab8a67b6a0.png)
-
-
-### Após informar os valores é feito a verificação de : 
+## Após informar os valores é feito a verificação de : 
 ### Valores não vazios
 ### Verificação de Toda a Regra de Negocio
+
 ![controller code](https://user-images.githubusercontent.com/81427844/158648682-e9275919-d60d-4ad2-a02d-3627e5b97ce0.png)
-### Apuração do Resultado Final
-![result code](https://user-images.githubusercontent.com/81427844/158648897-d45edbf5-b184-44f4-8872-b6c1ed7a649e.png)
+
+
+## Apuração do Resultado Final
+
+![result code](https://user-images.githubusercontent.com/81427844/158653238-d73e6d93-4eae-45e7-aadc-d6c30fa7c5c8.png)
+
+
 ### E por fim, Formatação dos resuktados para que seja transformado em algo utilizavel para o Proposito do App 
-localizado o Controller responsavel por fazer a verificação e ajuste das sugestões de Tintas
+
+![Screenshot_1647452115](https://user-images.githubusercontent.com/81427844/158652902-d7a02d9c-fc6a-4458-bca3-2c3399d90ab9.png)
+
+
+
 
 
  
