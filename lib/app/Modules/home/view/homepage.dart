@@ -32,6 +32,7 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               TextFormField(
+                key: const Key("inputNumberOfWalls"),
                 controller: _controller,
                 decoration: InputDecoration(
                   label: const Text("Quantas paredes você quer pintar ?"),
