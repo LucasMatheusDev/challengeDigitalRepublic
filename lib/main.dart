@@ -1,7 +1,6 @@
 import 'package:challenge_digital_republic/app/Modules/resultPage/view/result_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
 import 'app/Modules/home/view/homepage.dart';
 
 void main() {

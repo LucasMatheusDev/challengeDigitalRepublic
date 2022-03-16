@@ -18,41 +18,44 @@ class ResultView extends StatelessWidget {
             )),
         title: const Text("Resultado do calculo"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "Você tem ${ResultCalculatorPaints.totalSquareMetersWall} Metros Quadrado de parede para ser pintada",
-            style: const TextStyle(fontSize: 25),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            "O que resulta em ${ResultCalculatorPaints.totalSquareMetersWall / 5} Litros de tinta",
-            style: const TextStyle(fontSize: 25),
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            "Temos as seguintes Sugestões : ",
-            style: TextStyle(fontSize: 25),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: ResultCalculatorPaints.mapPaints.entries.map((e) {
-              i++;
-              const SizedBox(height: 20);
-              return Text(
-                "${i > 1 ? " e " : "."}${e.value} Latas de ${e.key} L",
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              );
-            }).toList(),
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            "E já adiantamos as coisas para você, so clicar que o seu carrinho de compras esta pronto :)",
-            textAlign: TextAlign.center,
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Você tem ${ResultCalculatorPaints.totalSquareMetersWall} Metros Quadrado de parede para ser pintada",
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 25),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              "O que resulta em ${ResultCalculatorPaints.totalSquareMetersWall / 5} Litros de tinta",
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 25),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Temos a seguinte Sugestão : ",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: ResultCalculatorPaints.mapPaints.entries.map((e) {
+                i++;
+                const SizedBox(height: 20);
+                return Text(
+                  "${i > 1 ? " e " : ""}${e.value} Latas de ${e.key} L",
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }

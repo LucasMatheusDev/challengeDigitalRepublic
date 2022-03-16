@@ -15,6 +15,23 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Calculando a Quantidade de tinta"),
+        actions: [
+          IconButton(
+            onPressed: () => showAboutDialog(
+              context: context,
+              applicationVersion: "1.0.0",
+              applicationName: "Calculator Paint",
+              applicationIcon: const Icon(
+                Icons.format_paint,
+                color: Colors.green,
+              ),
+            ),
+            icon: const Icon(
+              Icons.info_outlined,
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -22,7 +39,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                "Que tal economizar o seu dinheiro sabendo exatamente quanto precisa de tinta ? ",
+                "Que tal economizar o seu dinheiro sabendo exatamente o quanto de tinta você precisa ? ",
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: TextStyle(fontSize: 20),
