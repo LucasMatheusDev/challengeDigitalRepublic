@@ -1,5 +1,6 @@
 import 'package:challenge_digital_republic/app/Modules/home/controller/validator_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class WallInformationWidget extends StatefulWidget {
   final int index;
@@ -37,9 +38,11 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
               children: [
                 Expanded(
                   child: TextFormField(
-                                        enabled: true,
-
-                     key: const Key("wallHeightKey"),
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                      enabled: true,
+                      key: const Key("wallHeightKey"),
                       keyboardType: TextInputType.number,
                       decoration: customInputDecoration("altura"),
                       onChanged: (value) =>
@@ -53,11 +56,13 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: TextFormField(
-                    enabled: true,
-                    key: const Key("wallWidthKey"),
                       keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                      enabled: true,
+                      key: const Key("wallWidthKey"),
                       decoration: customInputDecoration("Largura"),
-                     
                       onChanged: (value) =>
                           validator.wallWidth = double.tryParse(value),
                       validator: (value) {
@@ -84,24 +89,29 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
               children: [
                 Expanded(
                   child: TextFormField(
-                                        enabled: true,
-
-                     key: const Key("windowsKey"),
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    enabled: true,
+                    key: const Key("windowsKey"),
                     keyboardType: TextInputType.number,
                     decoration: customInputDecoration("Quantas Janelas tem ?"),
-                    onChanged: (value) => validator.windows = int.tryParse(value),
+                    onChanged: (value) =>
+                        validator.windows = int.tryParse(value),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Campo vazio";
                       }
-                     
                     },
                   ),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: TextFormField(
-                     key: const Key("doorKey"),
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    key: const Key("doorKey"),
                     keyboardType: TextInputType.number,
                     decoration: customInputDecoration("Quantas Portas tem ?"),
                     onChanged: (value) => validator.door = int.tryParse(value),
@@ -109,7 +119,6 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                       if (value!.isEmpty) {
                         return "Campo vazio";
                       }
-                     
                     },
                   ),
                 ),
@@ -132,9 +141,9 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                 String? result = validator.allValidators();
                 return result;
               },
-              // Chamamos a função que ira fazer a soma e 
-              //entregar o resultado ao Controller responsável 
-             onSaved: (value)=> validator.updateInformation(),
+              // Chamamos a função que ira fazer a soma e
+              //entregar o resultado ao Controller responsável
+              onSaved: (value) => validator.updateInformation(),
             ),
             const SizedBox(
               height: 10,

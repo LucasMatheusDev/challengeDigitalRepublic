@@ -1,6 +1,7 @@
 import 'package:challenge_digital_republic/app/Modules/home/components/info_walls/walls_information_widget.dart';
 import 'package:challenge_digital_republic/app/Modules/home/controller/to_page_result_view_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -48,6 +49,10 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               TextFormField(
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 key: const Key("inputNumberOfWalls"),
                 controller: _controller,
                 decoration: InputDecoration(
