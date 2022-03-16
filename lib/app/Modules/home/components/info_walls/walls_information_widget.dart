@@ -39,11 +39,12 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                 Expanded(
                   child: TextFormField(
                       inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.digitsOnly
+                         FilteringTextInputFormatter.deny(",")
                       ],
                       enabled: true,
                       key: const Key("wallHeightKey"),
-                      keyboardType: TextInputType.number,
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: true),
                       decoration: customInputDecoration("altura"),
                       onChanged: (value) =>
                           validator.wallHeight = double.tryParse(value),
@@ -56,9 +57,9 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: TextFormField(
-                      keyboardType: TextInputType.number,
+                      keyboardType: const TextInputType.numberWithOptions(),
                       inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.digitsOnly
+                        FilteringTextInputFormatter.deny(",")
                       ],
                       enabled: true,
                       key: const Key("wallWidthKey"),

@@ -6,7 +6,7 @@ class ResultCalculatorPaints {
   void resultSuggestionPaint() {
     List<double> paintsStock = [0.5, 2.5, 3.6, 18.0];
     List<double> paints = paintsStock;
-    List<double> paintSuggestion = [];
+    List<double> _listPaintsSelected = [];
     // Convertendo para Litros - já que o valor padrão é 
     // de a cada 5 litros é equivalente a 1 METRO QUADRADO
     double _areaWall = totalSquareMetersWall / 5;
@@ -23,7 +23,7 @@ class ResultCalculatorPaints {
       // e subtraio por ele mesmo
       _areaWall = _areaWall - paints[i - 1];
       // adiciono essa lata na lista de latas usadas 
-      paintSuggestion.add(paints[i - 1]);
+      _listPaintsSelected.add(paints[i - 1]);
       // removo o valor alvo da lista para que a lista volte 
       // ao seu estado inicial, e que nenhum valor seja alterado
       paints.removeAt(i);
@@ -32,10 +32,10 @@ class ResultCalculatorPaints {
     //então adicione a menor lata para complementar (no caso 0,5 L)
     if (_areaWall > 0.01) {
       paintsStock.sort();
-      paintSuggestion.add(paintsStock.first);
+      _listPaintsSelected.add(paintsStock.first);
     }
-
-    paintSuggestion.addAll(paintSuggestion);
+    
+    paintSuggestion.addAll(_listPaintsSelected);
 
     // transformamos a lista de sugestão de tintas em map
     // para poder identificar as latas iguais e poder somar,
