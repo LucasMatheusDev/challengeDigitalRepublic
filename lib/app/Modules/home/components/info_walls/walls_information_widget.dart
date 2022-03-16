@@ -37,6 +37,8 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
               children: [
                 Expanded(
                   child: TextFormField(
+                                        enabled: true,
+
                      key: const Key("wallHeightKey"),
                       keyboardType: TextInputType.number,
                       decoration: customInputDecoration("altura"),
@@ -51,6 +53,7 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: TextFormField(
+                    enabled: true,
                     key: const Key("wallWidthKey"),
                       keyboardType: TextInputType.number,
                       decoration: customInputDecoration("Largura"),
@@ -81,6 +84,8 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
               children: [
                 Expanded(
                   child: TextFormField(
+                                        enabled: true,
+
                      key: const Key("windowsKey"),
                     keyboardType: TextInputType.number,
                     decoration: customInputDecoration("Quantas Janelas tem ?"),
@@ -143,6 +148,7 @@ class _WallInformationWidgetState extends State<WallInformationWidget> {
 
 InputDecoration customInputDecoration(String label) {
   return InputDecoration(
+    enabled: true,
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
     ),

@@ -1,9 +1,7 @@
 import 'package:challenge_digital_republic/app/Modules/home/components/info_walls/walls_information_widget.dart';
 import 'package:challenge_digital_republic/app/Modules/home/view/homepage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
 
 void main() {
   group('Home page', () {

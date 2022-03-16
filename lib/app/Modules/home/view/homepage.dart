@@ -1,6 +1,5 @@
 import 'package:challenge_digital_republic/app/Modules/home/components/info_walls/walls_information_widget.dart';
-import 'package:challenge_digital_republic/app/Modules/home/controller/result_calculator_paints.dart';
-import 'package:challenge_digital_republic/app/Modules/resultPage/view/result_view.dart';
+import 'package:challenge_digital_republic/app/Modules/home/controller/to_page_result_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -96,16 +95,8 @@ class HomePage extends StatelessWidget {
         () => count.value < 1
             ? const SizedBox()
             : FloatingActionButton.extended(
-              key: const Key("buttonForViewResult"),
-                onPressed: () {
-                  if (_formKeyHome.currentState!.validate()) {
-                    _formKeyHome.currentState?.save();
-                    ResultCalculatorPaints().resultSuggestionPaint();
-                    Get.to(
-                      () => const ResultView(key: Key("resultViewKey"),),
-                    );
-                  }
-                },
+                key: const Key("buttonForViewResult"),
+                onPressed: () => verificationToPageResultView(_formKeyHome),
                 label: const Text("Calcular Tinta"),
               ),
       ),

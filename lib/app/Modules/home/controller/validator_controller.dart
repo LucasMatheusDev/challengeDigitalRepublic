@@ -1,8 +1,8 @@
 import 'package:challenge_digital_republic/app/Modules/home/controller/result_calculator_paints.dart';
 
 class ValidatorController {
-  double _wallWidth = 2;
-  double _wallHeight = 2;
+  double _wallWidth = 1;
+  double _wallHeight = 1;
   int _windows = 0;
   int _door = 0;
 

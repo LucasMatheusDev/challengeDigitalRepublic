@@ -1,4 +1,5 @@
 import 'package:challenge_digital_republic/app/Modules/home/controller/result_calculator_paints.dart';
+import 'package:challenge_digital_republic/app/Modules/resultPage/controller/to_page_homepage_controller.dart';
 import 'package:flutter/material.dart';
 
 class ResultView extends StatelessWidget {
@@ -9,6 +10,12 @@ class ResultView extends StatelessWidget {
     int i = 0;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => toHomePageController(),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            )),
         title: const Text("Resultado do calculo"),
       ),
       body: Column(

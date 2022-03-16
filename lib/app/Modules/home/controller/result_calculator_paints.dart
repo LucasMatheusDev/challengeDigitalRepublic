@@ -38,6 +38,11 @@ class ResultCalculatorPaints {
       mapPaints[x] = !mapPaints.containsKey(x) ? 1 : (mapPaints[x]! + 1);
     }
   }
-  //* DEPOIS DESSE CÓDIGO LINDO A MINHA CONTRATAÇÃO É PRATICAMENTE OBRIGATÓRIA  RSRS*\\
 
+ 
+  void cleanValues() {
+    paintSuggestion.clear();
+    totalSquareMetersWall = 0.0;
+    mapPaints.clear();
+  }
 }
